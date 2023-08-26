@@ -4,7 +4,7 @@ net use \\%ClientDNS%\C$ /user:%username% %password%
 if %errorlevel% neq 0 (
     echo Unable to connect to the specified client.
 ) else (
-    echo Connected to %ClientDNS%. You can now access the C$ directory.
-    REM Add your desired commands or logic here
+    echo Connected to %ClientDNS%. Opening C$ directory...
+    explorer \\%ClientDNS%\C$
 )
 net use \\%ClientDNS%\C$ /delete
